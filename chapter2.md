@@ -14,3 +14,21 @@
   4. `use database_name;`
   5. 创建表 `create table table_name;`
   6. 从表中请求数据 `select * from table_name;`
+    * 缩小选择范围 `select * from table_name WHERE column_name = 'yes';` 返回column_name列的内容是yes的数据
+* 与数据库通信的PHP函数
+  1. `mysqli_connect()` 连接数据库，四个参数都是字符串
+    1. 第一个参数，数据库位置，可以是域名、IP地址或者localhost
+    2. 第二个和第三个参数，用户名和口令
+    3. 第四个参数，数据库名称
+    ```
+    $dbc = mysqli_connect('localhost', 'root', '口令', '数据库名称')
+      or die('Error connecting');
+    ```
+    4. 如果不填写第四个参数，会使用到 `mysqli_select_db()` 告诉服务器使用的数据库是什么
+    ```
+    $dbc = mysqli_connect('localhost','root','口令');
+    mysqli_select_db($dbc, '数据库名称');
+    ```
+  2. `mysqli_query()` 存储数据or获取数据
+  3. `mysqli_close()` 关闭与数据库的连接。用完关闭是个好习惯～数据库服务器同时只允许有一定数量的可用连接
+* `die()` PHP函数，终止PHP脚本，并提供失败代码的反馈。
