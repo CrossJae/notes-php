@@ -12,8 +12,13 @@
   2. 列出所有数据库 `show database;`
   3. 创建数据库 `create database database_name;`
   4. `use database_name;`
-  5. 创建表 `create table table_name;`
-  6. 从表中请求数据 `select * from table_name;`
+  5. 创建表 `create table table_name (column_name1 column_type1, column_name2 column_type2, ...);`
+  6. 插入数据
+  ```
+  insert into table_name (column_name1, column_name2, column_name3 ...)
+  values ('value1', 'value2', 'value2' ...);
+  ```
+  7. 从表中请求数据 `select * from table_name;`
     * 缩小选择范围 `select * from table_name WHERE column_name = 'yes';` 返回column_name列的内容是yes的数据
 * 与数据库通信的PHP函数
   1. `mysqli_connect()` 连接数据库，四个参数都是字符串
