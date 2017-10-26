@@ -38,5 +38,21 @@
      echo "已经填好"; // 不论message是否填内容，提交后，页面都会打印结果，如果换成empty()就好了
   }
   ```
+  * `isset()` 可以用来检验表单是否提交过，比如
+  ```
+  if(isset($_POST['submit'])){...}
+  ```
 4. `empty()` 确定变量是否是空值，php中空值表示0、空串、false、null，如果是空值，返回true
-5
+5. 表单
+  ```
+  <form action="xxx.php" method="post"></form>
+  ```
+6. 储存当前脚本的名 `$_SERVER['PHP_SELF']`
+  ```
+  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"></form>
+  ```
+
+  
+* todo
+[] html和php混合写在一起，用php来判断显示某一段html，而不是使用php拼接html字符串
+[] 删除重复数据
