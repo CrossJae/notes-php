@@ -51,8 +51,22 @@
   ```
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"></form>
   ```
+7. 更改已有数据表，设置唯一标识identifier
+  * 下列代码中 `ADD id` 增加一个名字是id的列
+  * `NOT NULL` 必须要有一个值，不能为空
+  * `AUTO_INCREMENT` 每一行，数值+1
+  * `FIRST` 放在表中第一列，可配置
+  * `ADD PRIMARY KEY (id)` 这个新列是主键，主键是表中保证各行唯一的一个列。
+    1. 主键中的数值不能重复
+    2. 主键必须有一个值
+    3. 主键尽可能高效，所以整数很适合主键，因为存粗空间少
+    4. 主键值不能更改
+  ```
+  ALTER TABLE table_name ADD id INT NOT NULL AUTO_INCREMENT FIRST,
+    ADD PRIMARY KEY (id)
+  ```
 
-  
+
 * todo
 [] html和php混合写在一起，用php来判断显示某一段html，而不是使用php拼接html字符串
 [] 删除重复数据
