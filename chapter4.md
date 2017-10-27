@@ -65,8 +65,10 @@
   ALTER TABLE table_name ADD id INT NOT NULL AUTO_INCREMENT FIRST,
     ADD PRIMARY KEY (id)
   ```
+8. 循环 `FOREACH` 无需while检测条件进行循环
+  ```
+  foreach($array as $item){
+    echo $item;
+  }
+  ```
 
-
-* todo
-[] html和php混合写在一起，用php来判断显示某一段html，而不是使用php拼接html字符串
-[] 删除重复数据
