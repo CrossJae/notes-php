@@ -28,11 +28,13 @@
   * 防止两个用户上传统一名称的图像文件，可以将文件名设置成唯一性，比如加入时间戳 `$traget = GW_UPLOADPATH . time() . $screenshot;`
 10. `define()` 创建常量
 11. 共享数据：需要被共享的常量放在一个单独的php文件中，其他需要用到这个常量的页面引用这个php `require_once('appvars.php'); // appvars.php是定义常量的脚本文件`
-12. 
-
+12. `ORDER BY` 排序 `select * from table_name order by column1 desc, column2 asc;` desc降序，asc升序
+13. `@unlink($_FILES['screenshot']['tmp_name']);` 删除不符合条件的文件，`@` 防止在文件上传未成功时显示错误报告。可以在任何PHP函数前加`@`来抑制错误报告。
 
 [] 查看我的php.ini文件，尝试修改file的位置
 [] 将数据库信息放入共享脚本中P257
+
+*-end-*
 
 
 

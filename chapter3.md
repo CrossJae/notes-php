@@ -35,3 +35,5 @@
 7. mail函数 `mail(to, subject, msg, 'From:' . from);`
 8. 删除数据 `delete from table_name`(全部删除！！)
   * 有选择的删除某一项 `delete from table_name where email = 'ls@mail.com';`
+
+*-end-*
