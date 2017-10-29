@@ -10,8 +10,8 @@
 3. `$_GET` 和 `$_POST` 的区别：请求的目的不同。通过GET传递的数据，在URL上是可见的，POST传递的数据是隐藏不可见的。POST和表单是绑定的，GET可以和表单也可以和URL一起工作。
   * get主要用于从服务器获取数据而不影响服务器上的任何其他方面
   * post通常向服务器发送数据，服务器的状态往往会有某种程度的改变来响应所发送的数据。
-4. 
-
+4. `DELETE FROM` 删除数据行 `DELETE FROM guitarwars WHERE name = 'Ashton Simpson' AND score = '368420' LIMIT 1`
+5. `LIMIT` 限制最大删除行数
 
 *-end-*
 
