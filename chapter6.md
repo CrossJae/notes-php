@@ -20,11 +20,28 @@
     header('WWW-Authenticate:Basic realm="Guitar Wars"');
   ?>
   ```
-5. 取消“cancel”输入时
+5. 点击取消“cancel”输入时
   ```
   exit('<div>message</div>')
   ```
 6. 其他首部的介绍
   * `header('Location : https://xxx')` 重定向
   * `header('Refresh:5; url=https://xxx')` 5s自刷新
+7. 人类仲裁也是一种保证安全的方式，比如审核。
+8. 表单的注入攻击
+  * 表单域是web应用的一个安全漏洞，比如在表单中填入代码。
+  * `-- `双连号加空格是sql语言中的单行注释符，后面都会被忽略，`#`也是单行注释符
+  * 数据库函数`mysqli_real_escape_string()`（字符串转义） 和 PHP函数`trim()`（清除前导和末尾的空格） 可以解决表单注入问题`mysqli_real_escape_string($dbc, trim($_POST['name']));`
+  * 解决注入的更有效的方法，是在插入数据的时候，按照需要插入，而不是按照数据顺序插入，并且某些重要的列是可以设定默认值的`DEFAULT`
+  ```
+  // 改善前
+  INSERT INOTO table_name VALUES(0, NOW(), '$name', '$score', '$screenshot');
+  // 改善后
+  INSERT INTO table_name (data, name, score, screenshot)
+  VALUES (NOW(), '$name', '$score', '$screenshot');
+  // 设定默认值
+  ALTER TABLE table_name MODIFY COLUMN column_name TINYINT DEFAULT 0;
+  ```
+  * 验证表单的数据类型也是防止注入的有效办法 `is_numeric(4444)`返回true
+
 *-end-*
