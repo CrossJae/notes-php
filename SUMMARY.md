@@ -8,3 +8,4 @@
 * [五.使用存储在文件中的数据](chapter5.1.md)
   * [添加管理页面删除数据](chapter5.2.md)
 * [六.保证应用安全](chapter6.md)
+* [七.创建个性化web应用](chapter7.md)
