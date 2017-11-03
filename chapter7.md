@@ -8,7 +8,7 @@ ADD password VARCHAR(16) NOT NULL AFTER username
 2. 口令需要加密，使用mysql提供的`SHA()`函数，此函数的结果是一个加密串，长度固定为40位16进制字符。我们存储的是一个40位字符串
   * `SHA()` 代表安全散列算法Secure Hash Algorithm 单向加密，无法还原。比`MD5()`更安全一些
   * php提供的加密函数是`shal()`和`md5()`
-  * 在HTTP认证窗口中将口令提交到服务器时，传输期间也应当对口令加密
+  * 在HTTP认证窗口中将口令提交到服务器时，传输期间也应当对口令加密（？）
   ```
   // 插入
   INSERT INTO table_name (username, password, join_date)
@@ -21,5 +21,7 @@ ADD password VARCHAR(16) NOT NULL AFTER username
 ```
 ALTER TABLE table_name CHANGE password password VARCHAR(40) NOT NULL
 ```
+4. 注册sign-up
+5. 注销
 
 *-end-*
