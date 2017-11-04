@@ -23,5 +23,25 @@ ALTER TABLE table_name CHANGE password password VARCHAR(40) NOT NULL
 ```
 4. 注册sign-up
 5. 注销
+  * 用HTTP认证登录后的用户名跟口令是永久保存在全局变量`$_SERVER`中，无法实现注销功能
+  * cookie
+    1. `setcookie()` 设置cookie `setcookie('username','sidneyk')`
+    2. `$_COOKIE` 获取cookie `$_COOKIE['username']`
+    3. 删除cookie：将到期日期设置为过去的一个时间 `setcookie('name', 'sidneyk', time()-3600)`
+    4. 但cookie有局限性，比如用户的浏览器禁用了cookie
+  * 会话
+    1. cookie是将数据存储在客户端，会话是将数据存储在服务器上，比cookie更安全可靠
+    2. 缺点：没有到期时间，所以浏览器关闭，会话就会被自动删除。必须注意开始会话、撤销会话、会话之后的清理工作
+    3. `session_start()` 会话开始，不设置任何数据，只是建立会话并开始运行。多次调用不会创建多个对话，第一次调用创建会话，后续的调用会先判断是否已有会话开始。
+    4. `session_destroy()` 会话结束：关闭浏览器或者调用这个方法
+    5. `$_SESSION['username'] = 'sidneyk'` 设置会话变量
+    6. `$_SESSION = array()` 销毁会话变量，把全局变量设置为一个空数组
+    7. 如果浏览器支持cookie，会话可能设置一个cookie临时存储会话id，所以要完全关闭一个会话，还必须删除可能在浏览器上自动创建来存储会话id的所有cookie
+    ```
+    if(isset($_COOKIE[session_nmae()])){
+      setcookie(session_name(), '', time()-3600);
+    }
+    ```
+6. 分解PHP代码置于HTML代码中，可以避免使用一大堆echo语句来生成结果，用`<?php`开始另一段PHP代码时，逻辑会从前面中断的地方继续。
 
 *-end-*
