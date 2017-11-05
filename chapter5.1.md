@@ -5,7 +5,10 @@
   2. `DROP COLUMN` 放弃一列
   3. `CHANGE COLUMN` 修改一列的列名和数据结构
   4. `MODIFY COLUMN` 修改列的类型和位置
-2. `UPDATE` 更新数据库 `UPDATE table_name SET column_name = 1 WHERE id = '$id'` 设置符合id条件的列值为1
+2. `UPDATE` 更新数据库 `UPDATE table_name SET column_name = 1 WHERE id = '$id'` 设置符合id条件的列值为1。
+```
+UPDATE table_name SET response = '$response' WHERE response_id = '$response_id';
+```
 3. `NOW()` 用来插入当前日期/时间，使用的是web服务器时间，而不是用户的当地时间
 4. `$_FILES` 内置PHP超级全局变量。是一个数组，包含上传文件的文件名和其他变量。
   * `$_FILES['screenshot']['name']` 上传文件的文件名，screenshot是input的属性name的值
