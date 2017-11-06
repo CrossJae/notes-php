@@ -28,8 +28,28 @@ echo '<input type="type" name="' . $response['$response_id'] . '" value="1" ' .
     PRIMARY KEY (category_id)
   )
   ```
-
-
-
+8. 更多的表，导致了更混乱的查询，联接join可以解决这个问题。INNER JOIN是内联的意思，ON后面的括号里填写的是条件。注意一点：WHERE子句中的具体比较会应用到原表，而不是查询结果。
+  ```
+  SELECT table_name1.column_name1, table_name2.column_name2
+    FROM table_name1
+    INNER JOIN table_name2
+    ON (table_name1.column_name3 = table_name2.column_name3)
+    WHERE table_name1.column_name2 = 'xxx'
+  ```
+9. 如果ON条件判断的列表名相同，可以用`USING`简化ON
+  ```
+  SELECT table_name1.column_name1, table_name2.column_name2
+    FROM table_name1
+    INNER JOIN table_name2
+    USING (column_name3)
+  ```
+10. 引用别名`AS`进一步简化INNER JOIN
+  ```
+  SELECT mt.column_name1, mc.column_name2
+    FROM table_name1 AS mt
+    INNER JOIN table_name2 AS mc
+    USING (column_name3)
+    WHERE mt.column_name2 = 'xxx'
+  ```
 
 *-end-*
