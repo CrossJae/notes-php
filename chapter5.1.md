@@ -1,8 +1,16 @@
 # 使用存储在文件中的数据
 
 1. `ALTER`  
-  1. `ADD COLUMN` 增加一列 `ALTER TABLE table_name ADD COLUMN column_name TINYINT` BOOL是TINYINT的别名，也可以使用（所以是个布尔值？）`ALTER TABLE table_name ADD COLUMN column_name ENUM('yes','no')` 也可以这样设定，只可以取yes或者no。
+  1. `ADD COLUMN` 增加一列。BOOL是TINYINT的别名，也可以使用（所以是个布尔值？）`ALTER TABLE table_name ADD COLUMN column_name ENUM('yes','no')` 也可以这样设定，只可以取yes或者no。
+  ```
+  ALTER TABLE table_name
+  ADD COLUMN column_name TINYINT
+  ```
   2. `DROP COLUMN` 放弃一列
+  ```
+  ALTER TABLE table_name
+  DROP COLUMN category
+  ```
   3. `CHANGE COLUMN` 修改一列的列名和数据结构
   4. `MODIFY COLUMN` 修改列的类型和位置
 2. `UPDATE` 更新数据库 `UPDATE table_name SET column_name = 1 WHERE id = '$id'` 设置符合id条件的列值为1。

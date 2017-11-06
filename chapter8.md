@@ -19,7 +19,15 @@ echo '<input type="type" name="' . $response['$response_id'] . '" value="1" ' .
     2. 建立使用表时关于对象所需了解的一个信息列表。（你如何使用这个表？）
     3. 使用这个列表，将对象的有关信息分解为组织表时可用的多个部分。（如何最容易的查询表？）
   * 规范化的一个基本概念是：原子数据的思想。就是在给定数据库用途的前提下，分解为最小形式的有意义的数据。
-
+  * 规范化的好处：不会出现重复数据，缩小数据库的规模；要搜索的数据更小，查询的更快
+7. 创建
+  ```
+  CREATE TABLE table_name (
+    category_id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(48) NOT NULL,
+    PRIMARY KEY (category_id)
+  )
+  ```
 
 
 
