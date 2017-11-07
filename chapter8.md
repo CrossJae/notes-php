@@ -51,5 +51,15 @@ echo '<input type="type" name="' . $response['$response_id'] . '" value="1" ' .
     USING (column_name3)
     WHERE mt.column_name2 = 'xxx'
   ```
+11. 可以联接多个表
+  ```
+  INNER JOIN table_name2 AS mt USING (column_name3)
+  INNER JOIN table_name3 AS mc USING (tegory_id)
+  ```
+12. 其他类型的联接
+  * 相等联接
+  * 非相等联接
+  * 自然联接
+  * 外联接
 
 *-end-*
