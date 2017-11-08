@@ -10,3 +10,4 @@
 * [六.保证应用安全](chapter6.md)
 * [七.创建个性化web应用](chapter7.md)
 * [八.控制你的数据](chapter8.md)
+* [九.串与定制函数](chapter9.md)

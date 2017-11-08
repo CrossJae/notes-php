@@ -43,7 +43,7 @@ echo '<input type="type" name="' . $response['$response_id'] . '" value="1" ' .
     INNER JOIN table_name2
     USING (column_name3)
   ```
-10. 引用别名`AS`进一步简化INNER JOIN
+10. 引用别名`AS`进一步简化INNER JOIN。原来的表列不太明确时，别名还可以用来对结果数据重命名。
   ```
   SELECT mt.column_name1, mc.column_name2
     FROM table_name1 AS mt
@@ -61,5 +61,13 @@ echo '<input type="type" name="' . $response['$response_id'] . '" value="1" ' .
   * 非相等联接
   * 自然联接
   * 外联接
+13. 同时循环两组数组，`for` 方法。其中`count()`方法返回数组中元素的个数。
+  ```
+  for($i = 0; $i<count($user_responses); $i++){
+    if($user_responses[$i]['response'] + $mismatch_responses[$i]['response'] == 3 ){
+      ...
+    }
+  }
+  ```
 
 *-end-*
