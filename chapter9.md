@@ -14,4 +14,17 @@
   * `substr()` 第一个参数是被截取的串；第二个参数是开始位置；第三个参数是截取长度 `$job_des = substring('are you a practioner of th lost art of cat', 4, 3)` 第二个参数是负值的话是从右边开始数。
 5. 函数避免重复代码，使用函数`function funcName($val){...}`
 6. `switch` 语句的使用是避免多层if，多层if解读代码时很困难。
+7. 如果数据过多，展示时就要采用分页形式
+  * `LIMIT` 一个参数时，表示限制最多显示多少行。如下，最多显示5行
+    ```
+    SELECT * FROM table_name
+      ORDER BY job_title
+      LIMIT 5
+    ```
+  * 两个参数时，第一个参数控制跳过多少行，第二个参数控制返回多少行。如下，返回从第11-15行。
+    ```
+    LIMIT 10, 5
+    ```
+
+
 *-end-*
