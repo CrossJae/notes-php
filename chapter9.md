@@ -12,6 +12,6 @@
   * `str_replace()` 第一个参数是被替换的字符；第二个参数是新字符；第三个参数是串。`$clean_search = str_replace(',', ' ', 'tightrops, walker, circus')` 替换逗号变成空格，再执行`explode()`对空格进行定位分解。
 4. 截取串的一部分
   * `substr()` 第一个参数是被截取的串；第二个参数是开始位置；第三个参数是截取长度 `$job_des = substring('are you a practioner of th lost art of cat', 4, 3)` 第二个参数是负值的话是从右边开始数。
-5. 函数避免重复代码
-
+5. 函数避免重复代码，使用函数`function funcName($val){...}`
+6. `switch` 语句的使用是避免多层if，多层if解读代码时很困难。
 *-end-*
