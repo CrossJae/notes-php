@@ -25,6 +25,14 @@
     ```
     LIMIT 10, 5
     ```
+  * `mysqli_num_rows()` 返回查询返回的总行数
+    ```
+    $query = select xxxxxx; // 一个查询语句
+    $result = mysqli_query($dbc, $query); // 查询
+    $total = mysqli_num_rows($result); // 总行数
+    ```
+  * `ceil()` 向上取整
+  
 
 
 *-end-*
