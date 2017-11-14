@@ -13,3 +13,4 @@
 * [九.串与定制函数](chapter9.md)
 * [十.正则表达式](chapter10.md)
 * [十一.绘制动态图像](chapter11.md)
+* [十二.绘制动态图像](chapter12.md)

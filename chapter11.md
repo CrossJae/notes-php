@@ -31,7 +31,7 @@
   * imagestring `imagestring($img, 3, 75, 75, 'Sample text', $color);` 3是字体大小，范围是1-5；75，75是文字左上角坐标；$color文本颜色。该方法很容易绘制文本，但对外观的控制很有限，所以使用`imagettftext`
   * imagecolortransparent 设置透明度
 5. 直方图
-  * 
+  * 每个柱形图循环绘制
 
 
 *-end-*
