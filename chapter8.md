@@ -12,7 +12,7 @@
 echo '<input type="type" name="' . $response['$response_id'] . '" value="1" ' .
 ($response['responss'] == 1 ? 'checked="checked"' : '') . ' />love ';
 ```
-5. `mysqli_num_rows()`?
+5. `mysqli_num_rows()` chapter9有解释
 6. 规范化：消除重复数据，并采用一种合理一致的方式分解和连接表。规范化是一个相当深奥的数据库设计主题，可能让人心生恐惧。
   * 以下是简单的数据库设计步骤：
     1. 选择对象，即希望用表来描述的对象。（你希望表描述的主题对象是什么？）
